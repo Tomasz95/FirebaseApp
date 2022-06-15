@@ -1,0 +1,42 @@
+buildscript {
+    apply from: 'app/dependencies.gradle'
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+//    plugins {
+//    id 'com.android.application' version '7.2.0' apply false
+//    id 'com.android.library' version '7.2.0' apply false
+//    id 'org.jetbrains.kotlin.android' version '1.6.10' apply false
+//}
+
+allprojects {
+    repositories {
+//        google()
+//        mavenCentral()
+//        jcenter()
+
+    }
+
+}
+
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+dependencies {
+    classpath 'com.android.tools.build:gradle:7.2.0'
+    classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10'
+    classpath hilt_deps.classpath_plugin
+
+//    classpath hilt_deps.classpath_plugin
+//    classpath nav_component_deps.classpath_safeargs
+//    classpath firebase_deps.classpath
+//    classpath firebase_deps.crashlytics_classpath
+
+}
+}
+
+
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
