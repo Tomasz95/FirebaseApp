@@ -27,12 +27,12 @@ ext {
             compiler        : "com.google.dagger:hilt-android-compiler:$hilt_version"
     ]
 
-//    nav_version = "2.3.5"
-//    nav_component_deps = [
-//            fragment_ktx      : "androidx.navigation:navigation-fragment-ktx:$nav_version",
-//            ui_ktx            : "androidx.navigation:navigation-ui-ktx:$nav_version",
-//            classpath_safeargs: "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
-//    ]
+    nav_version = "2.4.2"
+    nav_component_deps = [
+            fragment_ktx      : "androidx.navigation:navigation-fragment-ktx:$nav_version",
+            ui_ktx            : "androidx.navigation:navigation-ui-ktx:$nav_version",
+            classpath_safeargs: "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
+    ]
 //
 //    room_version = "2.4.0-alpha04"
 //    room_deps = [
