@@ -1,45 +1,49 @@
 package pl.gda.wsb.firebaseapp.fragments.task
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
+import android.util.Log
 import android.view.View
-import android.view.ViewGroup
-import pl.gda.wsb.firebaseapp.R
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.viewModelScope
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
+import pl.gda.wsb.firebaseapp.base.ui.BaseFragment
+import pl.gda.wsb.firebaseapp.databinding.FragmentTaskBinding
+import pl.gda.wsb.firebaseapp.fragments.ViewPagerViewModel
+import pl.gda.wsb.firebaseapp.fragments.dishes.DishResponse
+import javax.inject.Inject
 
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+@AndroidEntryPoint
+class TaskFragment @Inject constructor() : BaseFragment<FragmentTaskBinding, TaskViewModel>(
+    FragmentTaskBinding::inflate
+) {
+    override val vm: TaskViewModel by viewModels()
+    var burgersList = emptyList<DishResponse>()
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-class TaskFragment : Fragment() {
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+        getBurgers()
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_task, container, false)
+    // TODO
+    // change vm.viewModelScope na CoroutineScope np.
+    private fun getBurgers() {
+        vm.getCurrentBurgers()
+//        CoroutineScope(Dispatchers.Main).launch {
+//            vm.burgersList.collectLatest {
+//                Log.d("burgerslist", "LOgujemy we fragmencie: $it")
+//            }
+//        }
     }
 
-    companion object {
+//    override fun onDestroyView() {
+//        super.onDestroyView()
+//        // Log.d("tag", List<DishResponse>())
+//        binding = null
+//    }
 
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            TaskFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
 }

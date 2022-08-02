@@ -3,16 +3,12 @@ package pl.gda.wsb.firebaseapp.fragments
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
-import pl.gda.wsb.firebaseapp.R
 import pl.gda.wsb.firebaseapp.base.ui.BaseFragment
-import pl.gda.wsb.firebaseapp.databinding.FragmentHomeBinding
 import pl.gda.wsb.firebaseapp.databinding.FragmentViewPagerBinding
 import pl.gda.wsb.firebaseapp.fragments.home.HomeFragment
-import pl.gda.wsb.firebaseapp.fragments.home.HomeViewModel
 import pl.gda.wsb.firebaseapp.fragments.task.TaskFragment
 
 
@@ -24,6 +20,7 @@ class ViewPagerFragment :
         super.onViewCreated(view, savedInstanceState)
         initViewPager()
         initTabs()
+
     }
 
     private fun initTabs() {

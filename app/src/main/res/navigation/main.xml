@@ -9,10 +9,6 @@
         android:id="@+id/viewPagerFragment"
         android:name="pl.gda.wsb.firebaseapp.fragments.ViewPagerFragment"
         android:label="ViewPagerFragment" >
-        <argument
-            android:name="userEmail"
-            app:argType="string"
-            android:defaultValue="nothing" />
 
     </fragment>
     <fragment
