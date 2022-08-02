@@ -14,6 +14,7 @@ class DishResponseAdapter : JsonDeserializer<DishResponse>, JsonSerializer<DishR
         typeOfT: Type?,
         context: JsonDeserializationContext?
     ): DishResponse? {
+        //
 //        val obj = Json
 //        val jsonWithoutFirstAndLast = json!!.asString.toString().substring(2, json!!.asString.length - 1)
 //        Log.d("valuesadapter", jsonWithoutFirstAndLast.toString())
