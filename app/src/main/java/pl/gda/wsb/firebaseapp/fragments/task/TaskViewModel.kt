@@ -15,12 +15,14 @@ class TaskViewModel @Inject constructor(
     private val getBurgersUseCase: GetBurgersUseCase
 ) : BaseViewModel() {
     val burgersList = MutableStateFlow<List<DishResponse>>(emptyList())
+   
 
     fun getCurrentBurgers() {
         viewModelScope.launch {
             getBurgersUseCase.create(Unit).collect {
                 burgersList.value = it
-                Log.d("burgerslist", "Nasza lista: $it"
+                Log.d("Burgers", "Nasza lista: $it"
+                // TODO
                 )
             }
         }

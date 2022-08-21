@@ -13,7 +13,8 @@ import pl.gda.wsb.firebaseapp.fragments.auth.AuthFragment
 
 
 @AndroidEntryPoint
-class HomeFragment @Inject constructor(): BaseFragment<FragmentHomeBinding,HomeViewModel>(FragmentHomeBinding::inflate) {
+class HomeFragment @Inject constructor() :
+    BaseFragment<FragmentHomeBinding, HomeViewModel>(FragmentHomeBinding::inflate) {
     override val vm: HomeViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -21,8 +22,6 @@ class HomeFragment @Inject constructor(): BaseFragment<FragmentHomeBinding,HomeV
         layout.tvMyName.text = AuthFragment.userEmail
         Log.d("test123", AuthFragment.userEmail)
 
-
-
+        vm.insertDataToRoomRealmFirebase()
     }
-
 }

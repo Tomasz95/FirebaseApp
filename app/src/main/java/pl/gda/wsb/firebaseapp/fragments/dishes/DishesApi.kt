@@ -11,6 +11,6 @@ interface DishesApi {
             "X-RapidAPI-Host: burgers1.p.rapidapi.com"]
     )
     @GET("burgers")
-    suspend fun getBurgers(): DishResponse
+    suspend fun getBurgers(): List<DishResponse>
 
 }

@@ -33,7 +33,6 @@ dependencies {
 //    classpath nav_component_deps.classpath_safeargs
 //    classpath firebase_deps.classpath
 //    classpath firebase_deps.crashlytics_classpath
-
 }
 }
 
