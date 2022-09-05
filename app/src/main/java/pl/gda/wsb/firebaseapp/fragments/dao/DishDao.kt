@@ -12,5 +12,5 @@ interface DishDao {
 //    suspend fun deleteAll(dishesList: List<DishResponseRoom>)
 
     @Query("SELECT * FROM dishesroom")
-    fun getAllDishes(): List<DishResponseRoom>
+    suspend fun getAllDishes(): List<DishResponseRoom>
 }

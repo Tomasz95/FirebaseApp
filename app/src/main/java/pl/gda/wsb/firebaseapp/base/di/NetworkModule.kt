@@ -1,5 +1,7 @@
 package pl.gda.wsb.firebaseapp.base.di
 
+
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
@@ -8,6 +10,7 @@ import dagger.hilt.components.SingletonComponent
 import pl.gda.wsb.firebaseapp.BuildConfig
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -27,4 +30,12 @@ object NetworkModule {
             //    .client(client)
             .baseUrl(BuildConfig.BASE_URL)
             .build()
+
+    @Provides
+    @Singleton
+    fun provideFirestore(): FirebaseFirestore {
+
+        return FirebaseFirestore.getInstance()
+
+    }
 }

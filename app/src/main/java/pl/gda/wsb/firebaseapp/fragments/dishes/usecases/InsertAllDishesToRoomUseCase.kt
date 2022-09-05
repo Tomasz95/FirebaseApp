@@ -1,19 +1,15 @@
 package pl.gda.wsb.firebaseapp.fragments.dishes.usecases
 
-import pl.gda.wsb.firebaseapp.base.usecases.BaseFlowUseCase
 import pl.gda.wsb.firebaseapp.base.usecases.BaseUseCase
 import pl.gda.wsb.firebaseapp.fragments.dao.DishDao
 import pl.gda.wsb.firebaseapp.fragments.dishes.DishResponse
-import pl.gda.wsb.firebaseapp.fragments.dishes.DishesApi
 import pl.gda.wsb.firebaseapp.fragments.home.entities.DishResponseRoom
 import javax.inject.Inject
 
-class InsertAllDishesToRoom @Inject constructor(private val dishDao: DishDao) :
+class InsertAllDishesToRoomUseCase @Inject constructor(private val dishDao: DishDao) :
     BaseUseCase<List<DishResponse>, Unit>() {
     override suspend fun create(params: List<DishResponse>) {
 
-        // kasujemy wszystko
-//        dishDao.deleteAll()
 
         // mapuje z response do responseRoom
         val mappedRoomElement = from(params)

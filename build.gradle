@@ -21,13 +21,16 @@ allprojects {
 
 }
 
+    //byla werssja 7.2.0
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 dependencies {
-    classpath 'com.android.tools.build:gradle:7.2.0'
+    classpath 'com.android.tools.build:gradle:7.1.3'
     classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10'
     classpath hilt_deps.classpath_plugin
     classpath nav_component_deps.classpath_safeargs
-    classpath 'com.google.gms:google-services:4.3.10'
+    classpath 'com.google.gms:google-services:4.3.13'
+    classpath "io.realm:realm-gradle-plugin:10.6.0"
+
 
 //    classpath hilt_deps.classpath_plugin
 //    classpath nav_component_deps.classpath_safeargs
